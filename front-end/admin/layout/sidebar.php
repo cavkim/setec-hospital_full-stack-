@@ -7,7 +7,7 @@
                             <a href="index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						<li>
-                            <a href="index.php?doctor"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                            <a href="index.php?doctors=doctors"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
                         </li>
                         <li>
                             <a href="patients.html"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>

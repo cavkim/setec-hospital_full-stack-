@@ -12,31 +12,33 @@
 </head>
 
 <body>
+
     <div class="main-wrapper">
        <?php require_once('layout/header.php')  ?>
 
         <?php require_once('layout/sidebar.php')  ?>
-        <div class="page-wrapper">
-           <!-- Dynamic Content -->
-            <?php 
-            if(isset($_GET['doctor'])) {
-                 require_once('pages/doctor/doctor.php');
-            } elseif (isset($_GET['doctor'])) {
-               // 
-            } else {
-                # code...
-                require_once('layout/main.php');
-            }
-            
-           
-            
-            ?>
-           <!-- Dynamic Content -->
-            <div class="notification-box">
-                <?php require_once('pages/message/notification.php')  ?>
+
+            <div class="page-wrapper">
+            <!-- Dynamic Content -->
+                <?php 
+                if(isset($_GET['doctors'])) {
+                    // require_once('pages/doctors/'.$_GET['doctors'].'.php');
+                   require_once('pages/doctors/'.$_GET['doctors'].'.php');
+                        
+                } elseif (isset($_GET['doctors'])) {
+                // 
+                } else {
+                    # code...
+                    require_once('layout/main.php');
+                }
+                ?>
+            <!-- Dynamic Content -->
+                <div class="notification-box">
+                    <?php require_once('pages/message/notification.php')  ?>
+                </div>
             </div>
-        </div>
     </div>
+
     <div class="sidebar-overlay" data-reff=""></div>
     <?php require_once('layout/script.php')  ?>
 
