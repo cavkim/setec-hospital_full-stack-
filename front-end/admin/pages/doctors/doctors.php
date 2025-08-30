@@ -4,8 +4,16 @@
             <h4 class="page-title">Doctors</h4>
         </div>
         <div class="col-sm-8 col-9 text-right m-b-20">
-            <a href="add-doctor.html" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add
+            <a href="index.php?doctors=create_doctor" class="btn btn-primary btn-rounded float-right">
+                <i class="fa fa-plus"></i> Add
                 Doctor</a>
+        </div>
+
+        <div class="col-lg-8 offset-lg-2">
+            <?php
+            // Code
+            
+            ?>
         </div>
     </div>
     <div class="row doctor-grid">
@@ -14,18 +22,18 @@
         <?php
 
         $sql_query = "SELECT d.*,
-                                    n.nationality_name,
-                                    sd.service_name_kh,
-                                    a.address_name,
-                                    a.address_description,
-                                    g.gender_name
+                n.nationality_name,
+                sd.service_name_kh,
+                a.address_name,
+                a.address_description,
+                g.gender_name
 
-                                    FROM pda_doctor d 
+                FROM pda_doctor d 
 
-                                    INNER JOIN pda_nationality n ON d.nationality_id = n.nationality_id
-                                    INNER JOIN pda_service_department sd ON d.service_id = sd.service_id
-                                    INNER JOIN pda_address a ON d.address_id = a.address_id
-                                    INNER JOIN pda_gender g ON d.gender_id = g.gender_id";
+                INNER JOIN pda_nationality n ON d.nationality_id = n.nationality_id
+                INNER JOIN pda_service_department sd ON d.service_id = sd.service_id
+                INNER JOIN pda_address a ON d.address_id = a.address_id
+                INNER JOIN pda_gender g ON d.gender_id = g.gender_id";
 
         $result = mysqli_query($CONNECTION, $sql_query);
         $num_row = mysqli_num_rows($result);

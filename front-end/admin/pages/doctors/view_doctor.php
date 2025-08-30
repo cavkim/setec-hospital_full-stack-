@@ -5,9 +5,9 @@ $sql_query = "SELECT d.*,
             sd.service_name_kh,
             a.address_name,
             a.address_description,
-            d.doctor_age,
-             d.doctor_phone,
-             d.license_num,
+            d.doctor_dob,
+            d.doctor_phone,
+            d.license_num,
             g.gender_name
             FROM pda_doctor d 
             INNER JOIN pda_nationality n ON d.nationality_id = n.nationality_id
@@ -71,7 +71,7 @@ if ($num_row > 0) {
                                         </li> -->
                                         <li>
                                             <span class="title">Age:</span>
-                                            <span class="text"><?= $row['doctor_age'] ?></span>
+                                            <span class="text"><?= $row['doctor_dob'] ?></span>
                                         </li>
                                         <li>
                                             <span class="title">Address:</span>
